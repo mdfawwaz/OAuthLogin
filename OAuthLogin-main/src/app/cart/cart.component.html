@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Cart</h1>
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cartItem of cartItems">
+                <td>{{ cartItem.name }}</td>
+                <td>{{ cartItem.quantity }}</td>
+                <td>{{ cartItem.total }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h4>Total Amount: ${{generateBill()}}</h4>
+    <div class="checkout-button">
+        <button (click)="checkOut()">Check out</button>
+    </div>
+</body>
+</html>

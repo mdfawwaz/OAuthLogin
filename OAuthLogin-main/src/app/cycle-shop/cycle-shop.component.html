@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Store</title>
+    <h2>Where the world comes to shop Cycle!</h2>
+</head>
+<body>
+    <h1 class="cycle-shop-title">Cycles for Rent</h1>
+    <table class="cycle-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cycle of cycles" class="cycle-list-item">
+                <td><span class="badge">{{ cycle.id }}</span></td>
+                <td><span class="name">{{ cycle.name }}</span></td>
+                <td><span class="stock">{{ cycle.stock }}</span></td>
+                <td><span class="price">${{ cycle.price }}</span></td>
+                <td>
+                    <!-- <button type="button" (click)="borrow(cycle)" class="cycle-button">Borrow</button> -->
+                    <button type="button" (click)="returning(cycle)" class="cycle-button">Return</button>
+                    <button type="button" (click)="addtoCart(cycle)" class="cycle-button">Add To Cart</button>
+                    <!-- <button type="button" (click)="restock(cycle)" class="cycle-button">Restock</button>
+                    <input [(ngModel)]="count" type="number" class="cycle-input"> -->
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <br>
+    <!-- <div class="add-form">
+        <label for="name">Name</label>
+        <input [(ngModel)]="name" type="text" class="cycle-input">
+        <label for="stock">Stock</label>
+        <input [(ngModel)]="stock" type="number" class="cycle-input">
+        <label for="price">Price</label>
+        <input [(ngModel)]="price" type="number" class="cycle-input">
+        <button type="button" (click)="add(name, stock, price)" class="add-button">Add</button>
+    </div> -->
+</body>
+</html>
